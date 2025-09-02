@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digital Campaign Infographic: Whac-A-Mole Funnel Push</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+        }
+        .chart-container {
+            position: relative;
+            width: 100%;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            height: 400px;
+            max-height: 500px;
+        }
+        @media (min-width: 768px) {
+            .chart-container {
+                height: 500px;
+            }
+        }
+        .flow-arrow {
+            font-size: 2rem;
+            line-height: 1;
+            color: #118AB2;
+            transform: rotate(90deg);
+        }
+        @media (min-width: 768px) {
+           .flow-arrow {
+                transform: rotate(0deg);
+            }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 text-[#073B4C]">
+
+    <div class="container mx-auto p-4 md:p-8">
+
+        <header class="text-center mb-12">
+            <h1 class="text-4xl md:text-5xl font-extrabold text-[#118AB2] mb-2">Whac-A-Mole Campaign</h1>
+            <p class="text-lg md:text-xl font-semibold text-[#073B4C]">A Gamified Strategy to Drive Sales & Email Subscriptions</p>
+            <p class="max-w-3xl mx-auto mt-2 text-gray-600">This proposal outlines a multi-layered digital campaign for the Hong Kong adult wellness market, leveraging gamification, influencer marketing, and targeted ads to boost engagement and conversion.</p>
+        </header>
+
+        <main class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <div class="md:col-span-2 lg:col-span-3 bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-[#118AB2] mb-4 text-center">The Campaign Mechanism</h2>
+                <p class="text-center text-gray-600 mb-6">Our strategy combines three core pillars: a fun gamified activation to attract users, a multi-tiered offer system to incentivize purchases, and a powerful KOL-driven promotion to build trust and reach.</p>
+                <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-center">
+                    <div class="bg-[#FFD166] bg-opacity-20 p-6 rounded-lg">
+                        <h3 class="font-bold text-xl text-[#073B4C] mb-2">🎮 Gamify</h3>
+                        <p>An engaging Whac-A-Mole web game acts as the primary hook, turning brand interaction into a fun and rewarding experience.</p>
+                    </div>
+                    <div class="bg-[#06D6A0] bg-opacity-20 p-6 rounded-lg">
+                        <h3 class="font-bold text-xl text-[#073B4C] mb-2">💸 Incentivize</h3>
+                        <p>A tiered discount structure, from exclusive 20% OFF codes to general 5% OFF offers, caters to different user segments and motivations.</p>
+                    </div>
+                    <div class="bg-[#FF6B6B] bg-opacity-20 p-6 rounded-lg">
+                        <h3 class="font-bold text-xl text-[#073B4C] mb-2">🤝 Collaborate</h3>
+                        <p>Partnering with trusted KOLs in the adult wellness space drives authentic conversations and funnels high-intent traffic to our platform.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 lg:col-span-3 bg-white rounded-lg shadow-lg p-6">
+                 <h2 class="text-2xl font-bold text-[#118AB2] mb-4 text-center">Multi-Tiered Offer Strategy</h2>
+                 <p class="text-center text-gray-600 mb-6">To maximize conversion, we will deploy a variable offer strategy. This allows us to create urgency with limited high-value discounts via KOLs, reward engagement from game players, and capture a broad audience with a low-barrier-to-entry offer.</p>
+                 <div class="chart-container h-80 md:h-96">
+                     <canvas id="offerChart"></canvas>
+                 </div>
+            </div>
+
+            <div class="md:col-span-2 lg:col-span-3 bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-[#118AB2] mb-4 text-center">The Customer Journey</h2>
+                <p class="text-center text-gray-600 mb-8">This funnel illustrates the path from discovery to conversion, guiding users through a seamless and engaging experience designed to minimize drop-off and encourage purchase.</p>
+                <div class="flex flex-col md:flex-row items-center justify-between space-y-4 md:space-y-0 md:space-x-4">
+                    <div class="text-center flex-1 p-4 bg-gray-100 rounded-lg">
+                        <p class="text-3xl mb-2">📢</p>
+                        <h3 class="font-bold text-lg">Traffic Source</h3>
+                        <p class="text-sm text-gray-600">KOLs, Paid Ads (Google, Twitter, ExoClick), Organic Socials</p>
+                    </div>
+                    <div class="flow-arrow font-bold">→</div>
+                    <div class="text-center flex-1 p-4 bg-gray-100 rounded-lg">
+                         <p class="text-3xl mb-2">🕹️</p>
+                        <h3 class="font-bold text-lg">Activation</h3>
+                        <p class="text-sm text-gray-600">User plays Whac-A-Mole or lands on product page from a direct offer ad.</p>
+                    </div>
+                    <div class="flow-arrow font-bold">→</div>
+                    <div class="text-center flex-1 p-4 bg-gray-100 rounded-lg">
+                         <p class="text-3xl mb-2">🎁</p>
+                        <h3 class="font-bold text-lg">Engagement</h3>
+                        <p class="text-sm text-gray-600">Receives a unique discount code (5%-20%) or wins a prize.</p>
+                    </div>
+                    <div class="flow-arrow font-bold">→</div>
+                    <div class="text-center flex-1 p-4 bg-gray-100 rounded-lg">
+                         <p class="text-3xl mb-2">🛒</p>
+                        <h3 class="font-bold text-lg">Purchase</h3>
+                        <p class="text-sm text-gray-600">Applies code at checkout. Countdown timers create urgency.</p>
+                    </div>
+                    <div class="flow-arrow font-bold">→</div>
+                    <div class="text-center flex-1 p-4 bg-gray-100 rounded-lg">
+                         <p class="text-3xl mb-2">🔄</p>
+                        <h3 class="font-bold text-lg">Remarketing</h3>
+                        <p class="text-sm text-gray-600">Cart abandoners are retargeted via email and display ads.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 lg:col-span-3 bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-[#118AB2] mb-4 text-center">Meet Our Partners: Suggested KOLs</h2>
+                <p class="text-center text-gray-600 mb-6">Our influencer strategy focuses on partnering with a diverse group of creators in the adult wellness and lifestyle space to maximize reach and credibility. This chart compares the follower counts of our shortlisted KOLs.</p>
+                <div class="chart-container" style="height: 600px; max-height: 800px;">
+                    <canvas id="kolChart"></canvas>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 lg:col-span-3 bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-[#118AB2] mb-4 text-center">Campaign Rollout Timeline</h2>
+                <p class="text-center text-gray-600 mb-8">The campaign is structured in distinct phases, from pre-launch setup to post-campaign analysis, ensuring a smooth and effective execution over four weeks.</p>
+                <div class="relative">
+                    <div class="border-l-4 border-[#118AB2] absolute h-full top-0 left-1/2 -ml-0.5 md:border-t-4 md:border-l-0 md:w-full md:h-auto md:top-1/2 md:-mt-0.5 md:left-0"></div>
+                    <div class="grid grid-cols-1 md:grid-cols-4 gap-x-8">
+                        <div class="mb-8 md:mb-0">
+                            <div class="bg-[#FFD166] text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">1</div>
+                            <h3 class="text-center font-bold">Weeks -2 to -1</h3>
+                            <p class="text-center text-sm text-gray-600">Tech setup, KOL onboarding, product shipping, and final game testing.</p>
+                        </div>
+                        <div class="mb-8 md:mb-0">
+                            <div class="bg-[#FF6B6B] text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">2</div>
+                            <h3 class="text-center font-bold">Launch Week</h3>
+                            <p class="text-center text-sm text-gray-600">KOLs post, game goes live, paid media activated, first leaderboard update.</p>
+                        </div>
+                        <div class="mb-8 md:mb-0">
+                            <div class="bg-[#06D6A0] text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">3</div>
+                            <h3 class="text-center font-bold">Weeks 2-3</h3>
+                            <p class="text-center text-sm text-gray-600">Second KOL content drop, email blasts, and remarketing begins for non-converters.</p>
+                        </div>
+                        <div>
+                            <div class="bg-[#118AB2] text-white p-3 rounded-full w-12 h-12 flex items-center justify-center mx-auto mb-4 text-xl font-bold">4</div>
+                            <h3 class="text-center font-bold">Post-Campaign</h3>
+                            <p class="text-center text-sm text-gray-600">Final reporting and financial settlement, followed by a bonus push to the new lead pool.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="md:col-span-2 lg:col-span-3 bg-white rounded-lg shadow-lg p-6">
+                <h2 class="text-2xl font-bold text-[#118AB2] mb-6 text-center">Key Campaign Goals</h2>
+                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 text-center">
+                    <div class="bg-blue-100 p-6 rounded-lg">
+                        <p class="text-4xl font-extrabold text-[#118AB2]">+30%</p>
+                        <p class="font-semibold">Traffic Sessions</p>
+                    </div>
+                    <div class="bg-green-100 p-6 rounded-lg">
+                        <p class="text-4xl font-extrabold text-[#06D6A0]">▲</p>
+                        <p class="font-semibold">Raise Sales Orders</p>
+                    </div>
+                    <div class="bg-yellow-100 p-6 rounded-lg">
+                        <p class="text-4xl font-extrabold text-[#FFD166]">▲</p>
+                        <p class="font-semibold">Raise Email Subscriptions</p>
+                    </div>
+                    <div class="bg-red-100 p-6 rounded-lg">
+                        <p class="text-4xl font-extrabold text-[#FF6B6B]">≥50</p>
+                        <p class="font-semibold">Retained Leads</p>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+
+            const energeticPalette = {
+                red: '#FF6B6B',
+                yellow: '#FFD166',
+                green: '#06D6A0',
+                blue: '#118AB2',
+                darkBlue: '#073B4C'
+            };
+
+            const processLabel = (label, maxLength = 16) => {
+                if (label.length <= maxLength) {
+                    return label;
+                }
+                const words = label.split(' ');
+                const lines = [];
+                let currentLine = '';
+                for (const word of words) {
+                    if ((currentLine + ' ' + word).trim().length > maxLength) {
+                        lines.push(currentLine.trim());
+                        currentLine = word;
+                    } else {
+                        currentLine = (currentLine + ' ' + word).trim();
+                    }
+                }
+                if (currentLine) {
+                    lines.push(currentLine.trim());
+                }
+                return lines;
+            };
+
+            const tooltipTitleCallback = (tooltipItems) => {
+                const item = tooltipItems[0];
+                let label = item.chart.data.labels[item.dataIndex];
+                if (Array.isArray(label)) {
+                  return label.join(' ');
+                }
+                return label;
+            };
+
+            const createOfferChart = () => {
+                const ctx = document.getElementById('offerChart').getContext('2d');
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: ['KOL Exclusive (Limited)', 'KOL General / Game Reward', 'General Ad Offer'],
+                        datasets: [{
+                            label: 'Discount Percentage',
+                            data: [20, 10, 5],
+                            backgroundColor: [
+                                energeticPalette.red,
+                                energeticPalette.blue,
+                                energeticPalette.yellow
+                            ],
+                            borderColor: [
+                                energeticPalette.red,
+                                energeticPalette.blue,
+                                energeticPalette.yellow
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Discount %'
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                            tooltip: {
+                                callbacks: {
+                                    title: tooltipTitleCallback
+                                }
+                            }
+                        }
+                    }
+                });
+            };
+
+            const createKolChart = () => {
+                const ctx = document.getElementById('kolChart').getContext('2d');
+                const kolData = [
+                    { name: 'ok.la.hk', followers: 62600 },
+                    { name: '🦊Rania💋💕梁羽嶠🦊 (@at_vr_yukiu)', followers: 48900 },
+                    { name: 'BONNIE MAN 文炎君 (@bonnieman_)', followers: 47900 },
+                    { name: '空港日记 (@wangleimeme)', followers: 32800 },
+                    { name: 'Marlo Ko (@marlo_ko)', followers: 29700 },
+                    { name: 'Miyabi紫雅＊夢の國度 (@miyabi_yume)', followers: 25400 },
+                    { name: 'Wong hong ki (@ssk.__w)', followers: 24300 },
+                    { name: '小凜 りんか (@rinka.u.rinka)', followers: 23700 },
+                    { name: 'Jerlame', followers: 18100 },
+                    { name: 'Merry Cheung 瑪莉社長｜人體書法｜Performance art (@merryislovely)', followers: 17100 },
+                    { name: 'IFBB Bikini Pro Heather Kam 🇭🇰 (@heatherkam.ifbbpro)', followers: 12400 },
+                    { name: 'May Yan (@yhlmay)', followers: 7700 }
+                ];
+
+                const labels = kolData.map(k => processLabel(k.name));
+                const data = kolData.map(k => k.followers);
+
+                new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: labels,
+                        datasets: [{
+                            label: 'Follower Count',
+                            data: data,
+                            backgroundColor: [
+                                energeticPalette.blue, energeticPalette.green, energeticPalette.yellow, energeticPalette.red,
+                                energeticPalette.blue, energeticPalette.green, energeticPalette.yellow, energeticPalette.red,
+                                energeticPalette.blue, energeticPalette.green, energeticPalette.yellow, energeticPalette.red
+                            ],
+                            borderWidth: 1
+                        }]
+                    },
+                    options: {
+                        indexAxis: 'y',
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        scales: {
+                            x: {
+                                beginAtZero: true,
+                                title: {
+                                    display: true,
+                                    text: 'Followers'
+                                }
+                            }
+                        },
+                        plugins: {
+                            legend: {
+                                display: false
+                            },
+                             tooltip: {
+                                callbacks: {
+                                    title: tooltipTitleCallback
+                                }
+                            }
+                        }
+                    }
+                });
+            };
+            
+            createOfferChart();
+            createKolChart();
+        });
+    </script>
+</body>
+</html>
+
