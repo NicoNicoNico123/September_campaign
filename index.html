@@ -187,34 +187,35 @@
                 darkBlue: '#073B4C'
             };
 
-            const processLabel = (label, maxLength = 16) => {
+            const kolData = [
+                { name: 'ok.la.hk', followers: 62600 },
+                { name: '🦊Rania💋💕梁羽嶠🦊 (@at_vr_yukiu)', followers: 48900 },
+                { name: 'BONNIE MAN 文炎君 (@bonnieman_)', followers: 47900 },
+                { name: '空港日记 (@wangleimeme)', followers: 32800 },
+                { name: 'Marlo Ko (@marlo_ko)', followers: 29700 },
+                { name: 'Miyabi紫雅＊夢の國度 (@miyabi_yume)', followers: 25400 },
+                { name: 'Wong hong ki (@ssk.__w)', followers: 24300 },
+                { name: '小凜 りんか (@rinka.u.rinka)', followers: 23700 },
+                { name: 'Jerlame', followers: 18100 },
+                { name: 'Merry Cheung 瑪莉社長｜人體書法｜Performance art (@merryislovely)', followers: 17100 },
+                { name: 'IFBB Bikini Pro Heather Kam 🇭🇰 (@heatherkam.ifbbpro)', followers: 12400 },
+                { name: 'May Yan (@yhlmay)', followers: 7700 }
+            ];
+
+            const processLabel = (label, maxLength = 25) => {
                 if (label.length <= maxLength) {
                     return label;
                 }
-                const words = label.split(' ');
-                const lines = [];
-                let currentLine = '';
-                for (const word of words) {
-                    if ((currentLine + ' ' + word).trim().length > maxLength) {
-                        lines.push(currentLine.trim());
-                        currentLine = word;
-                    } else {
-                        currentLine = (currentLine + ' ' + word).trim();
-                    }
-                }
-                if (currentLine) {
-                    lines.push(currentLine.trim());
-                }
-                return lines;
+                // For horizontal bar charts, we can use longer labels
+                // Just truncate with ellipsis if too long
+                return label.substring(0, maxLength - 3) + '...';
             };
 
             const tooltipTitleCallback = (tooltipItems) => {
                 const item = tooltipItems[0];
-                let label = item.chart.data.labels[item.dataIndex];
-                if (Array.isArray(label)) {
-                  return label.join(' ');
-                }
-                return label;
+                const dataIndex = item.dataIndex;
+                // Get the original full name from kolData instead of the processed label
+                return kolData[dataIndex].name;
             };
 
             const createOfferChart = () => {
@@ -268,20 +269,6 @@
 
             const createKolChart = () => {
                 const ctx = document.getElementById('kolChart').getContext('2d');
-                const kolData = [
-                    { name: 'ok.la.hk', followers: 62600 },
-                    { name: '🦊Rania💋💕梁羽嶠🦊 (@at_vr_yukiu)', followers: 48900 },
-                    { name: 'BONNIE MAN 文炎君 (@bonnieman_)', followers: 47900 },
-                    { name: '空港日记 (@wangleimeme)', followers: 32800 },
-                    { name: 'Marlo Ko (@marlo_ko)', followers: 29700 },
-                    { name: 'Miyabi紫雅＊夢の國度 (@miyabi_yume)', followers: 25400 },
-                    { name: 'Wong hong ki (@ssk.__w)', followers: 24300 },
-                    { name: '小凜 りんか (@rinka.u.rinka)', followers: 23700 },
-                    { name: 'Jerlame', followers: 18100 },
-                    { name: 'Merry Cheung 瑪莉社長｜人體書法｜Performance art (@merryislovely)', followers: 17100 },
-                    { name: 'IFBB Bikini Pro Heather Kam 🇭🇰 (@heatherkam.ifbbpro)', followers: 12400 },
-                    { name: 'May Yan (@yhlmay)', followers: 7700 }
-                ];
 
                 const labels = kolData.map(k => processLabel(k.name));
                 const data = kolData.map(k => k.followers);
